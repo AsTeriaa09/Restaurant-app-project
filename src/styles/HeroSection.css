@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansita+Swashed:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansita+Swashed:wght@300..900&display=swap");
+.hero-img {
+  background-image: url(../images/heroImg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 420px;
+  position: relative;
+  margin-top: 0;
+  text-align: center;
+  /* display: block; */
+}
+.hero-texts {
+  color: #fff;
+  position: absolute;
+  top: 28%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 9;
+}
+.hero-texts h1 {
+  padding-bottom: 15px;
+  font-family: Roboto;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.hero-input {
+  width: 60%;
+  box-shadow: 2px 4px 5px 0 rgba(204, 199, 198, 0.4);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  background: #fff;
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  font-size: 1.2rem;
+}
+/* .hero-search-bar{
+display: flex;
+align-items: center;
+justify-content: center;
+} */
+::placeholder {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+.hero-texts .hero-icon {
+  font-size: 1.6rem;
+  position: absolute;
+  top: 60%;
+  left: 21%;
+}
+.hero-btn {
+  position: absolute;
+  top: 61%;
+  right: 21%;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: roboto;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #ff645a;
+  opacity: 1;
+}
+.hero-btn:hover {
+  background-color: #eb4f44;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-texts {
+    top: 40%;
+  }
+  .hero-texts h1 {
+    font-size: 1.5rem;
+  }
+  .hero-input {
+    width: 80%;
+    padding-left: 35px;
+  }
+  .hero-texts .hero-icon {
+    top: 52%;
+    left: 12%;
+  }
+  .hero-btn {
+    position: absolute;
+    top: 56%;
+    right: 12%;
+    font-size: 1rem;
+  }
+  ::placeholder {
+    font-size: 1.1rem;
+  }
+}

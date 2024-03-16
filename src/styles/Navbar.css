@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Sansita+Swashed:wght@300..900&display=swap");
+.navbar-brand {
+  font-size: 1.8rem;
+  font-family: Sansita Swashed;
+}
+.nav-item .nav-link {
+  position: relative;
+}
+.nav-item .nav-link {
+  font-size: 1.2rem;
+  color: black;
+  /* transition: all ease-in 0.3s; */
+}
+.nav-items .nav-link:hover {
+  color: #ff645a !important;
+}
+.nav-items .nav-link:hover::before {
+  content: "";
+  position: absolute;
+  background: #ff645a;
+  height: 4px;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  bottom: -22px;
+  left: 50%;
+}
+.nav-items .nav-link:valid,
+.nav-items .nav-link:focus{
+    color: #ff645a !important;
+}
+.nav-items .nav-link:valid::before,
+.nav-items .nav-link:focus::before{
+    content: "";
+  position: absolute;
+  background: #ff645a;
+  height: 4px;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  bottom: -22px;
+  left: 50%;
+}
+
+@media only screen and (max-width: 767px){
+  .nav-items .nav-link:valid,
+.nav-items .nav-link:focus{
+    color: #ff645a !important;
+}
+.nav-items .nav-link:valid::before,
+.nav-items .nav-link:focus::before{
+  bottom: -5px;
+  left: 10%;
+}
+}
+
+
