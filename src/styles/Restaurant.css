@@ -1,3 +1,51 @@
 .res-main .container{
     margin-top: 60px;
+    margin-bottom: 60px;
+    position: relative;
+}
+.res-main h1::before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #ff645a;
+    top: 18px;
+    left: -8px;
+    transform: translate(-50%);
+}
+.slick-img{
+    
+}
+.slick-img img{
+    height: 180px;
+    width: 100%;
+    background-size: cover;
+    margin-right: 10px;
+    /* transition: transform 400ms ease-in-out 0s; */
+    transition: all ease-in-out .3s;
+    overflow: hidden;
+    transform-origin: center top;
+}
+.slick-img img:hover{
+   transform: scale(1.05);
+}
+.slick-img .card{
+    width: 280px;
+    border: none;
+    border-bottom: .1px solid silver;
+    overflow: hidden;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.slick-img .card:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-bottom: none;
+}
+.slider-buttons{
+    display: flex;
+    justify-content: space-between;
+    /* margin-top: -50px; */
+   font-size: 1.2rem;
+  cursor: pointer;
+
 }
