@@ -1,16 +1,16 @@
 import React from "react";
-import "../styles/Navbar.css"
+import "../styles/Navbar.css";
 import { TbBrandDrupal } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import logo from "../images/logo.png"
 
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light py-3">
+      <nav className="navbar navbar-expand-lg navbar-light py-3">
         <div className="container">
           <Link className="navbar-brand" to="/">
-          <TbBrandDrupal className="me-2 text-danger"/>
-            DineOut
+            <img src={logo} alt="" />
           </Link>
           <button
             className="navbar-toggler"

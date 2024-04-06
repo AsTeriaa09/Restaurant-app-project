@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansita+Swashed:wght@300..900&display=swap");
+.SinglePage {
+  padding-top: 90px;
+  padding-left: 150px;
+  padding-right: 130px;
+}
+.SinglePage img {
+  height: 400px;
+  width: 600px;
+  padding-right: 20px;
+}
+.SinglePage h2 {
+  text-transform: capitalize;
+  font-family: Roboto;
+}
+.SinglePage .location {
+  /* font-weight: 500; */
+  font-size: 1rem;
+  font-family: poppins;
+}
+.SinglePage .description {
+  color: #807f7f;
+}
+.SinglePage .location-icon {
+  font-size: 1.2rem;
+}
+.SinglePage .cuisine-button .cuisine-icon {
+  font-size: 2rem;
+  color: #ff645a;
+}
+.SinglePage .cuisine span{
+font-weight: 500;
+
+}
+.SinglePage .menu-link{
+    text-decoration: none;
+    color: #ff645a;
+    transition: all ease-in 0.3s;
+}
+.SinglePage .menu-link:hover{
+    text-decoration: underline;
+}
+.SinglePage .book-button {
+  color: #fff;
+  font-size: 1rem;
+  transition: all ease-in 0.3s;
+  background-color: #ff645a;
+  border-radius: 4px;
+  border: none;
+  font-family: poppins;
+  text-transform: uppercase;
+  padding: 8px 12px;
+}
+.SinglePage .book-button:hover {
+  background-color: #eb4f44;
+}

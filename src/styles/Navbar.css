@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Arizonia&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Sansita+Swashed:wght@300..900&display=swap");
+.navbar{
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .navbar-brand {
   font-size: 1.8rem;
   font-family: Sansita Swashed;
+}
+.navbar-brand img{
+  height: 50px;
+  width: 180px;
 }
 .nav-item .nav-link {
   position: relative;

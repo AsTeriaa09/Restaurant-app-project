@@ -14,9 +14,6 @@
     left: -8px;
     transform: translate(-50%);
 }
-.slick-img{
-    
-}
 .slick-img img{
     height: 180px;
     width: 100%;
@@ -36,6 +33,7 @@
     border-bottom: .1px solid silver;
     overflow: hidden;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
 }
 .slick-img .card:hover{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

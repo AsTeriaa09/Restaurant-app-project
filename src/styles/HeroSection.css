@@ -28,8 +28,11 @@
   letter-spacing: 1px;
   font-weight: 700;
 }
-.hero-input {
+.hero-texts form{
   width: 60%;
+}
+form .hero-input {
+  width: 100%;
   box-shadow: 2px 4px 5px 0 rgba(204, 199, 198, 0.4);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;

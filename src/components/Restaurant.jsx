@@ -7,38 +7,44 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/Restaurant.css";
 import { GrLinkPrevious } from "react-icons/gr";
 import { GrLinkNext } from "react-icons/gr";
+import { useGlobalContext } from "../Context/Context";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Restaurant = () => {
+  // const handleResize = (event, { size }) => {};
+
+  const { popularRes } = useGlobalContext();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const sliderRef = useRef(null);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: windowWidth <= 767 ? 1 : 4,
     slidesToScroll: 1,
   };
 
-  const handleResize = (event, { size }) => {
-    // Handle resizing logic if needed
-  };
-
-  const [resData, setResData] = useState([]);
-  const sliderRef = useRef(null);
-
-  const getData = async () => {
-    const res = await fetch("/API.json");
-    const data = await res.json();
-    // console.log(data);
-    setResData(data);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
 
   return (
     <>
-      <div className="res-main">
+      <div className="res-main ">
         <div className="container">
-          <h1>Popular Restaurants</h1>
+          <div className="ms-lg-0 ms-3">
+            <h1>Popular Restaurants</h1>
+          </div>
         </div>
 
         <div className="container">
@@ -49,51 +55,39 @@ const Restaurant = () => {
             draggableOpts={{ enableUserSelectHack: false }}
           >
             <Slider ref={sliderRef} {...settings}>
-              {resData.map((cur, index) => (
-                <div key={index} className="slick-img ms-4">
-                  <div className="card">
-                    <img
-                      src={cur.image}
-                      alt={cur.name}
-                      className="card-img-top"
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title">{cur.name}</h5>
-                      <p class="card-text">
-                       {cur.location}
-                      </p>
-                    </div>
+              {popularRes.map((cur) => {
+                const { image, location, name, _id } = cur;
+                return (
+                  <div className="slick-img ms-4" key={_id}>
+                    <Link to={`/singleProduct/${_id}`} className="ResList-link">
+                      <div className="card ms-lg-0 ms-2">
+                        <img src={image} alt={name} className="card-img-top" />
+                        <div className="card-body">
+                          <h5 className="card-title">{name}</h5>
+                          <p className="card-text">{location}</p>
+                        </div>
+                      </div>
+                    </Link>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </Slider>
           </Resizable>
           <div className="slider-buttons">
             <div
-              className="prev"
+              className="prev ms-lg-0 ms-2"
               onClick={() => sliderRef.current.slickPrev()}
             >
-              <GrLinkPrevious/>
+              <GrLinkPrevious />
             </div>
             <div
-              className="next"
+              className="next me-lg-0 me-3"
               onClick={() => sliderRef.current.slickNext()}
             >
-              <GrLinkNext/>
+              <GrLinkNext />
             </div>
           </div>
         </div>
-        {/* {resData.map((cur) => {
-        return (
-          <div>
-            <img
-              src={cur.image}
-              alt={cur.name}
-              style={{ width: "200px", height: "200px" }}
-            />
-          </div>
-        );
-      })} */}
       </div>
     </>
   );

@@ -1,0 +1,19 @@
+footer{
+    border-top: .1px solid #3333332d;
+    padding: 40px 0;
+    margin-top: 80px;
+    text-align: center;
+}
+.footer-logo img{
+    height: 50px;
+    width: 180px;
+  }
+footer span{
+    font-weight: 500;
+}
+.socials .social-link{
+text-decoration: none;
+color: #ff645a;
+margin: 0 10px;
+font-size: 1.8rem;
+}

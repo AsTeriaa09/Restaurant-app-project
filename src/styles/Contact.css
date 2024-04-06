@@ -1,0 +1,29 @@
+.contact-sec input{
+    overflow: hidden;
+    outline: none;
+}
+.contact-sec form{
+    width: 40rem;
+    margin: auto;
+}
+.contact-sec form .btn{
+    font-size: 1.1rem;
+    background-color: #ff645a;
+    color: #fff;
+    width: 40rem;
+}
+.contact-sec form .btn:hover{
+    background-color: #f75347;
+}
+.form-control::placeholder{
+    font-size: 1rem;
+}
+@media only screen and (max-width: 767px){
+    .contact-sec form{
+        width: 20rem;
+        margin: auto;
+    }
+    .contact-sec form .btn{
+        width: 20rem;
+    }
+}
