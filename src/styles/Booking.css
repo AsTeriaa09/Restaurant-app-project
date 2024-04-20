@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansita+Swashed:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arizonia&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sansita+Swashed:wght@300..900&display=swap");
+.Booking h1 {
+  padding-top: 60px;
+  font-family: Roboto;
+}
+.Booking .col-lg-4 img {
+  height: 600px;
+  width: 550px;
+  /* border: 2px solid red; */
+  margin-top: -100px;
+}
+.Booking .firstFlex {
+  display: flex;
+}
+.Booking input {
+  width: 770px;
+}
+.Booking .firstFlex input {
+  width: 360px;
+}
+.Booking .people select {
+  width: 770px;
+  height: 37px;
+}
+.Booking .firstFlex select {
+  width: 360px;
+  height: 37px;
+}
+.Booking label {
+  font-weight: 500;
+}
+
+.Booking form .btn {
+  font-size: 1.1rem;
+  background-color: #ff645a;
+  color: #fff;
+  width: 770px;
+  height: 38px;
+}
+.Booking form .btn:hover {
+  background-color: #f75347;
+}

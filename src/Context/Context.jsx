@@ -13,22 +13,36 @@ const initialState = {
   singleRes: {},
   filters: {
     search: "",
-    tag: "All",
+    tag: "",
   },
 };
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const getData = async (url) => {
+  const [item, setItem] = useState([]);
+
+  // const getData = async (url) => {
+  //   try {
+  //     const res = await axios.get(url);
+  //     const AllRes = await res.data;
+  //     dispatch({ type: "GET_ALL_DATA", payload: AllRes });
+  //     // setItem(resData);
+  //     // console.log(setItem);
+  //   } catch (error) {
+  //     dispatch({ type: "GET_ERROR" });
+  //     //  console.log(error);
+  //   }
+  // };
+
+  const getItem = async (url) => {
     try {
-      const res = await axios.get(url);
-      const AllRes = await res.data;
-      dispatch({ type: "GET_ALL_DATA", payload: AllRes });
-      // setResData(Data);
-      // console.log(AllRes);
+      const iData = await axios.get(url);
+      const itemData = await iData.data;
+      console.log(itemData);
+      setItem(itemData);
     } catch (error) {
-      dispatch({ type: "GET_ERROR" });
+      console.log(error);
     }
   };
 
@@ -43,7 +57,6 @@ const AppProvider = ({ children }) => {
       dispatch({ type: "GET_POPULAR_ERROR" });
     }
   };
-
 
   const getSinglePageData = async (id) => {
     try {
@@ -65,22 +78,25 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "SEARCH_FILTER_VALUE" });
   }, [state.filters]);
 
-  useEffect(() => {
-    getData(API);
-  }, []);
+  // useEffect(() => {
+  //   getData(API);
+  // }, []);
 
   useEffect(() => {
     getPopularData(API);
   }, []);
-
+  useEffect(() => {
+    getItem(API);
+  }, []);
   return (
     <AppContext.Provider
       value={{
         ...state,
-        getData,
         getSinglePageData,
         API,
         updatedFilterValue,
+        item,
+        setItem,
       }}
     >
       {children}

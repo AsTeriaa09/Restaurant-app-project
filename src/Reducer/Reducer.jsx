@@ -40,24 +40,19 @@ const ProductReducer = (state, action) => {
         },
       };
     case "SEARCH_FILTER_VALUE":
-      let { popularRes, AllRes } = state;
+      let { popularRes } = state;
       let tempfilter = [...popularRes];
-      let tempTagfilter = [...AllRes];
-      const { search, tag } = state.filters;
+      const { search } = state.filters;
       if (search) {
         tempfilter = tempfilter.filter((cur) => {
           return cur.name.toLowerCase().includes(search);
         });
       }
-      if (tag !== "All") {
-        tempTagfilter = tempTagfilter.filter((cur) => {
-          return cur.tag === tag;
-        });
-      }
+     
       return {
         ...state,
         popularRes: tempfilter,
-        AllRes: tempTagfilter, 
+  
       };
 
     default:

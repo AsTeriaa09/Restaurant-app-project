@@ -48,7 +48,9 @@ const SinglePage = () => {
                 </Link>
               </p>
 
-              <button className="book-button mt-2"> Book Now </button>
+              <Link to="/booking">
+                <button className="book-button mt-2"> Book Now </button>
+              </Link>
             </div>
           </div>
         </div>

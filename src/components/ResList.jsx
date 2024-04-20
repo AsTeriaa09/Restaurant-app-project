@@ -1,14 +1,11 @@
 import React from "react";
-import "../styles/ResList.css";
-import { useGlobalContext } from "../Context/Context";
 import { Link } from "react-router-dom";
 
-const ResList = () => {
-  const { AllRes } = useGlobalContext();
+const ResList = ({ filteredItems }) => {
   return (
     <div className="ResList ms-5">
       <div className="row">
-        {AllRes.map((cur) => {
+        {filteredItems.map((cur) => {
           const { image, location, name, _id } = cur;
           return (
             <div className="col-lg-4" key={_id}>

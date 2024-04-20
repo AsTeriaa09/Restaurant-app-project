@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import TableBook from "./components/TableBook";
 import SinglePage from "./components/SinglePage";
+import Booking from "./components/Booking";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/book-table" element={<TableBook />} />
           <Route path="/singleProduct/:id" element={<SinglePage />} />
+          <Route path="/booking" element={<Booking />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer/>

@@ -1,42 +1,36 @@
 import React from "react";
 import { useGlobalContext } from "../Context/Context";
 
-const FilterSection = () => {
-  const {
-    filters: { tag },
-    AllRes,
-    updatedFilterValue,
-  } = useGlobalContext();
+const FilterSection = ({ setFilteredItems }) => {
+  const { item } = useGlobalContext();
+  const allTags = [...new Set(item.map((cur) => cur.tag))];
 
-  const getUniqueData = (data, property) => {
-    let tagValue = data.map((cur) => {
-      return cur[property];
-    });
-    return (tagValue = ["All",...new Set(tagValue)]);
-    // console.log(tagValue)
+  const filterByTag = (cur) => {
+    const filteredItems = cur
+      ? item.filter((restaurant) => restaurant.tag === cur)
+      : item;
+    setFilteredItems(filteredItems);
   };
 
-  const tagData = getUniqueData(AllRes, "tag");
   return (
     <div className="FilterSection">
       <h3>Cuisines</h3>
-        {tagData.map((cur, index) => {
-          return (
-            <div className="cuisine-item" key={index}>
-              <button
-                 className={`d-flex ${cur === tag ? "active" : ""}`} 
-                type="button"
-                name="tag"
-                value={cur}
-                onClick={updatedFilterValue}
-              >
-                {cur}
-              </button>
-            </div>
-          );
-        })}
 
-
+      <button
+        className={setFilteredItems ? "active" : "button"}
+        onClick={() => filterByTag("")}
+      >
+        All
+      </button>
+      {allTags.map((cur, id) => (
+        <button
+          key={id}
+          className={setFilteredItems ? "" : "active"}
+          onClick={() => filterByTag(cur)}
+        >
+          {cur}
+        </button>
+      ))}
     </div>
   );
 };
