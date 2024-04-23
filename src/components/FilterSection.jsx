@@ -17,7 +17,7 @@ const FilterSection = ({ setFilteredItems }) => {
       <h3>Cuisines</h3>
 
       <button
-        className={setFilteredItems ? "active" : "button"}
+        className={setFilteredItems ? "active" : ""}
         onClick={() => filterByTag("")}
       >
         All
@@ -25,7 +25,7 @@ const FilterSection = ({ setFilteredItems }) => {
       {allTags.map((cur, id) => (
         <button
           key={id}
-          className={setFilteredItems ? "" : "active"}
+          className={setFilteredItems ? "activee" : ""}
           onClick={() => filterByTag(cur)}
         >
           {cur}

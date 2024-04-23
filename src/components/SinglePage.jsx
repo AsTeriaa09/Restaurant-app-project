@@ -48,7 +48,11 @@ const SinglePage = () => {
                 </Link>
               </p>
 
-              <Link to="/booking">
+              {/* <Link to="/booking">
+                <button className="book-button mt-2"> Book Now </button>
+              </Link> */}
+
+              <Link to={`/booking/${id}`}>
                 <button className="book-button mt-2"> Book Now </button>
               </Link>
             </div>
